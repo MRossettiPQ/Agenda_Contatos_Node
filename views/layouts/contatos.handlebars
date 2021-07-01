@@ -1,3 +1,4 @@
+<div class="starter-template">
 {{> barra}}
 <div class="d-flex justify-content-center" allign="center">
     <h1 class="card-title">Lista de Contatos</h1><br>
@@ -5,7 +6,7 @@
 {{>inserir}}
 {{#with findQtContato}}
     <div class="d-flex justify-content-center" allign="center">
-        <h1 class="card-title">Possui {{count}} Numeros na lista de contatos</h2>
+        <h1 class="card-title">{{count}} contatos</h2>
     </div>
 {{/with}}
 {{#each findContato}}
@@ -15,15 +16,16 @@
                 <div class="col-sm">
                     <table>
                         <tr>
-                            <td width="200px">
-                            </td>
                             <td>
                                 <table>
                                     <tr>
-                                        <td width="150px">Nome</td><td width="350px"><b>{{nomeContato}}</b></td><td width="150px">Telefone</td><td width="350px"><b>{{telefoneContato}}</b></td>
+                                        <td width="150px">Nome</td><td width="550px"><b>{{nomeContato}}</b></td><td width="150px">Telefone</td><td width="350px"><b>{{telefoneContato}}</b></td>
                                     </tr>
                                     <tr>
-                                        <td width="150px">Email</td><td width="350px"><b>{{emailContato}}</b></td><td width="150px">Nascimento</td><td width="350px"><b>{{nascContato}}</b></td>
+                                        <td width="150px">Email</td><td width="550px"><b>{{emailContato}}</b></td><td width="150px">Nascimento</td><td width="350px"><b>{{#formatDate nascContato}}{{/formatDate}}</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="150px">Idade</td><td width="550px"><b>{{#teste nascContato}}{{/teste}}</b></td><td width="150px"><td width="350px"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -41,3 +43,4 @@
         </ul>
     </div>
 {{/each}}
+</div>

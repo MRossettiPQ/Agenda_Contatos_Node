@@ -11,7 +11,9 @@ const   express = require("express"),
         session = require('express-session'),
         bodyParser = require("body-parser"),
         passport = require('passport-local'),
+        moment = require('moment'),
         path = require('path'),
+        helpers = require('handlebars-helpers'),
         Sequelize = require('sequelize');
 
 //Conexao MySQL com Sequelize
@@ -101,7 +103,15 @@ app.engine('.handlebars', exphbs({
     runtimeOptions: {
         allowProtoPropertiesByDefault: true,
         allowProtoMethodsByDefault: true,
-    },
+    }, 
+    helpers: {
+        formatDate: (date) => {
+            return moment(date).format('DD/MM/YY');
+        },
+        teste: (idade) => {
+            return moment(idade, "YYYYMMDD").fromNow();;
+        },
+    }
 }));
 app.set('view engine', 'handlebars');
 
