@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "name": "agenda_contatos",
+  "description": "Requisitos\r NODE JS 16.3.0\r MySQL 8.0",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRossettiPQ/Agenda_Contatos.git"
+  },
+  "author": "Matheus Rossetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MRossettiPQ/Agenda_Contatos/issues"
+  },
+  "homepage": "https://github.com/MRossettiPQ/Agenda_Contatos#readme"
+}

@@ -1,0 +1,24 @@
+    <div class="d-flex justify-content-center" >
+        <div class="login-form">
+            <h1 class="card-title">Login Contato</h1>
+            <form action="/envioLogin" method="POST">
+                <label>USUARIO</label>              <input type="text" name="userUser" required>
+                <label>SENHA</label>                <input type="password" name="senhaUser" required>
+                <button type="submit">LOGAR</button>
+            </form><br>
+        </div>
+ 
+        <div class="cad-form">
+            <h1 class="card-title">Cadastro de Usuario</h1>
+            <form action="/envioCad" method="POST">
+                <label>NOME</label>                 <input type="text" name="nomeUser" required>
+                <label>USUARIO</label>              <input type="text" name="userUser" required>
+                <label for="exampleInputEmail1">EMAIL</label><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailUser" required>
+                <label>TELEFONE</label>             <input type="text" name="telefoneUser" required>
+                <label>DATA DE NASCIMENTO</label>   <input type="date" name="nascUser" required>
+                <label>SENHA</label>                <input type="password" name="senhaUser" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>

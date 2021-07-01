@@ -1,0 +1,27 @@
+
+{{#with findPerfil}}<br>
+        <h1 class="text-center">Perfil de {{userUser}}</h1><br>
+<div class="container">
+    <div class="d-flex justify-content-center" allign="center">
+        <span class="border">
+                <table>
+                    <tr>
+                        <td width="250px">
+                            <img src="{{nomeContato}}" class="img-thumbnail">
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td width="300px" height="100px">NOME: <b>{{nomeUser}}</b></td><td width="300px" height="100px">EMAIL: <b>{{emailUser}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td width="300px" height="100px">TELEFONE: <b>{{telefoneUser}}</b></td><td  class="dates" width="300px" height="100px">DATA DE NASCIMENTO: <b>{{nascUser}}</b></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+        </span>
+    </div>
+</div>
+{{/with}}

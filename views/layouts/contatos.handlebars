@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center" allign="center">
+    <h1 class="card-title">Lista de Contatos</h1><br>
+</div>
+<div class="d-flex justify-content-center" allign="center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <form action="/envioCont" method="POST">
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalInserir">
+                    Inserir
+                    </button>
+                    <div class="modal fade" id="modalInserir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                        <label>NOME</label>                 <input class="form-control" type="text" name="nomeContato" required><br>
+                                        <label for="exampleInputEmail1">EMAIL</label><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailContato"><br>
+                                        <label>TELEFONE</label>             <input class="form-control"  type="text" name="telefoneContato" required><br>
+                                        <label>DATA DE NASCIMENTO</label>   <input class="form-control"  type="date" name="nascContato"><br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>  
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0" action="/pesquisa" method="GET">
+                    <input class="form-control" type="search" placeholder="Pesquisa" aria-label="Pesquisa">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <ul class="list-group" id="contact-list">
+        {{#each findContato}}
+        <li class="list-group-item">
+            <div class="col-sm">
+                <table>
+                    <tr>
+                        <td width="200px">
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td width="150px">Nome</td><td width="350px"><b>{{nomeContato}}</b></td><td width="150px">Telefone</td><td width="350px"><b>{{telefoneContato}}</b></td>
+                                </tr>
+                                <tr>
+                                    <td width="150px">Email</td><td width="350px"><b>{{emailContato}}</b></td><td width="150px">Email</td><td width="350px"><b>{{nascContato}}</b></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Editar</button>
+                                <a href="/envioDel/{{idContato}}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deletar</button></a>
+                            </div>
+                        </td>
+                    </tr>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
