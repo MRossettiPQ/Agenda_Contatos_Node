@@ -263,6 +263,9 @@ app.get('/envioDel/:idContato', function (req, res) {
         res.redirect('/contatos');
     });
 });
+app.get('/ABRIR', function (req, res) {
+    res.render('partials/barra');
+});
 //Disponilizar server
 app.listen(port, () => {
     console.log(`O server esta rodando em http://${hostname}:${port}/`);
