@@ -1,0 +1,29 @@
+<form action="/envioEditar" method="POST">
+    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
+        Editar
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-2" role="dialog" aria-labelledby="examplemodalEditar"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="examplemodalEditar">Adicionar Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>NOME</label> <input class="form-control" type="text" name="nomeContato" required><br>
+                    <label for="exampleInputEmail1">EMAIL</label><input type="email" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                        name="emailContato"><br>
+                    <label>TELEFONE</label> <input class="form-control" type="text" name="telefoneContato" required><br>
+                    <label>DATA DE NASCIMENTO</label> <input class="form-control" type="date" name="nascContato"><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

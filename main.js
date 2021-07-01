@@ -82,7 +82,7 @@ const contUsers = sequelize.define('contUsers', {
         allowNull: true
     },
     nascContato: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
         allowNull: true
     },
     fotoContato: {
@@ -122,7 +122,7 @@ app.get('/', function (req, res) {
     } 
     else 
     {
-        res.render('layouts/login');
+        res.render('partials/login');
     }
 });
 app.post('/', function (req, res) {
@@ -133,7 +133,7 @@ app.post('/', function (req, res) {
     }
     else
     {
-        res.render('layouts/login');
+        res.render('partials/login');
     }
 });
 //CADASTRO E ENVIO DE USUARIOS
@@ -161,8 +161,7 @@ app.post('/envioCad', function (req, res) {
             res.redirect('/');
         }); 
     }).catch(function(erro){
-        console.log(`Usuario ou Email em Uso`);
-        res.redirect('/');
+        res.render('layouts/mainErro');
     });
 });
 //INSERIR CONTATO
@@ -178,6 +177,7 @@ app.post('/envioCont', function (req, res) {
         }).then(function(){
             res.redirect('/contatos');
         }).catch(function(erro){
+            alert('Os campos nome e telefone são obrigatorios.');
         });
     }
     else
@@ -239,8 +239,42 @@ app.get('/perfil', function(req, res) {
 app.get('/contatos', function(req, res) {
     if(req.session.loggedin == true)
     {
-        contUsers.findAll({where: { 
+        contUsers.findAll({
+            where: { 
                 UserIdUser: req.session.idUser,
+            }
+        }).then(function(findContato){
+            contUsers.findAndCountAll({
+                where: { 
+                    UserIdUser: req.session.idUser,
+                }
+            }).then(function(findQtContato){
+                res.render('layouts/contatos', {
+                    findContato: findContato,
+                    findQtContato: findQtContato
+                });
+            }).catch(function(erro){
+                res.redirect('/');
+            });
+        }).catch(function(erro){
+            res.redirect('/');
+        });
+    }
+    else
+    {
+        res.redirect('/');
+    }
+});
+app.get('/pesquisa', function(req, res) {
+    res.redirect('/contatos');
+});
+app.post('/pesquisa', function(req, res) {
+    if(req.session.loggedin == true)
+    {
+        contUsers.findAll({
+            where: { 
+                UserIdUser: req.session.idUser,
+                nomeContato: req.body.nomeContato
             }
         }).then(function(findContato){
             res.render('layouts/contatos', {findContato: findContato});

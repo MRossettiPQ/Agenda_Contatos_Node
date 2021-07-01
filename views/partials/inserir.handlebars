@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center" allign="center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <form action="/envioCont" method="POST">
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalInserir">
+                    Inserir
+                    </button>
+                    <div class="modal fade" id="modalInserir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                        <label>NOME</label>                 <input class="form-control" type="text" name="nomeContato" required><br>
+                                        <label for="exampleInputEmail1">EMAIL</label><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailContato"><br>
+                                        <label>TELEFONE</label>             <input class="form-control"  type="text" name="telefoneContato" required><br>
+                                        <label>DATA DE NASCIMENTO</label>   <input class="form-control"  type="date" name="nascContato" placeholder="dd-mm-yyyy" min="1900-01-01" max="2030-12-31"><br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>  
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0" action="/pesquisa" method="POST">
+                    <input class="form-control mr-sm-2" type="search"  name="nomeContato" placeholder="Pesquisa" aria-label="Pesquisa">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</div>
